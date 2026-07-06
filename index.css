@@ -1,10 +1,12 @@
+/* Basic reset to clear out default browser margins */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Using flexbox on the body to easily center the main card vertically and horizontally */
 body {
     height: 100vh;
     display: flex;
@@ -13,17 +15,18 @@ body {
     background-color: #f3f8ff;
 }
 
+/* The main container holding both sides */
 .login-container {
-    display: flex;
-    width: 80%;
-    max-width: 1000px;
-    height: 70vh;
+    display: flex; /* This places the left and right divs side-by-side automatically */
+    width: 800px;
+    height: 500px;
     background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden; /* Prevents the blue background from spilling outside the rounded corners */
 }
 
+/* flex: 1 makes this section take up exactly 50% of the container */
 .left-section {
     flex: 1;
     background-color: #0099ff;
@@ -33,90 +36,78 @@ body {
 }
 
 .left-section img {
-    width: 70%;
-    object-fit: contain;
+    width: 90%;
 }
 
+/* flex: 1 for the right side so it matches the left side equally */
 .right-section {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 40px;
-}
-
-.form-wrapper {
-    width: 100%;
-    max-width: 350px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks the form elements vertically instead of horizontally */
+    justify-content: center;
 }
 
 h2 {
-    text-align: center;
     color: #333;
-    font-size: 28px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .subtitle {
-    text-align: center;
-    color: #888;
+    color: gray;
     font-size: 14px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .input-group {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+    flex-direction: column; /* Keeps the label neatly stacked on top of the input box */
+    margin-bottom: 15px;
 }
 
 .input-group label {
     font-size: 12px;
-    color: #666;
-    margin-bottom: 8px;
+    color: gray;
+    margin-bottom: 5px;
 }
 
 .input-group input {
-    padding: 12px 15px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    outline: none;
-    background-color: #fcfcfc;
-    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .forgot-link {
-    text-align: right;
     font-size: 12px;
-    color: #666;
-    text-decoration: none;
-    margin-bottom: 30px;
+    color: gray;
+    text-align: right;
     display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .login-btn {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     background-color: #0099ff;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    margin-bottom: 25px;
+    transition: background-color 0.3s ease; 
+}
+
+/* Adding a hover effect to show interaction */
+.login-btn:hover {
+    background-color: #007acc; 
 }
 
 .register-text {
-    text-align: center;
     font-size: 12px;
-    color: #666;
-}
-
-.register-text a {
-    color: #0099ff;
-    text-decoration: none;
-    font-weight: bold;
+    color: gray;
+    text-align: center;
+    margin-top: 15px;
 }
